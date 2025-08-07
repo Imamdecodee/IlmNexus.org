@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration | ILM-NEXUS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Event Registration Specific Styles */
+        .event-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .event-header img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .event-details {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .detail-item {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .detail-item i {
+            color: #2A3F8F;
+            margin-right: 15px;
+            font-size: 20px;
+            min-width: 25px;
+        }
+        
+        .payment-options {
+            margin-top: 30px;
+        }
+        
+        .payment-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .payment-method input {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">ILM-<span>NEXUS</span></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="join.html">Join Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Event Registration Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="event-header">
+                <h2 class="section-title">Digital Skills Conference 2025</h2>
+                <img src="./ilm nexus event gallary/ilm-nexus backdrop.jpg" alt="Digital Skills Conference">
+                
+                <div class="event-details">
+                    <div class="detail-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <div>
+                            <h4>Date</h4>
+                            <p>August 22, 2025</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Time</h4>
+                            <p>9:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Venue</h4>
+                            <p>Assembly Hall, Federal School of Surveying, Oyo</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-tag"></i>
+                        <div>
+                            <h4>Registration Fee</h4>
+                            <p>₦5,000 (Students) | ₦10,000 (Professionals)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-form">
+                    <form action="https://formsubmit.co/theilmnexus@gmail.com" method="POST">
+                        <h3>Registration Form</h3>
+                        
+                        <div class="form-group">
+                            <label for="full-name">Full Name*</label>
+                            <input type="text" id="full-name" name="full-name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address*</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number*</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="institution">Institution/Organization*</label>
+                            <input type="text" id="institution" name="institution" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="attendee-type">Attendee Type*</label>
+                            <select id="attendee-type" name="attendee-type" required>
+                                <option value="">Select...</option>
+                                <option value="student">Student</option>
+                                <option value="professional">Professional</option>
+                                <option value="educator">Educator</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="dietary">Dietary Requirements</label>
+                            <select id="dietary" name="dietary">
+                                <option value="none">None</option>
+                                <option value="vegetarian">Vegetarian</option>
+                                <option value="vegan">Vegan</option>
+                                <option value="halal">Halal</option>
+                                <option value="other">Other (please specify)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="special-needs">Special Needs/Access Requirements</label>
+                            <textarea id="special-needs" name="special-needs" rows="3"></textarea>
+                        </div>
+                        
+                        <div class="payment-options">
+                            <h4>Payment Method*</h4>
+                            
+                            <div class="payment-method">
+                                <input type="radio" id="bank-transfer" name="payment-method" value="bank-transfer" required>
+                                <label for="bank-transfer">Bank Transfer</label>
+                            </div>
+                            
+                            <div class="payment-method">
+                                <input type="radio" id="paystack" name="payment-method" value="paystack">
+                                <label for="paystack">Paystack (Online Payment)</label>
+                            </div>
+                            
+                            <div class="payment-method">
+                                <input type="radio" id="onsite" name="payment-method" value="onsite">
+                                <label for="onsite">Pay Onsite</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">I agree to the <a href="terms.html" target="_blank">Terms and Conditions</a>*</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">Subscribe to our newsletter</label>
+                        </div>
+                        
+                        <!-- FormSubmit settings -->
+                        <input type="hidden" name="_subject" value="New Event Registration - Digital Skills Conference 2025">
+                        <input type="hidden" name="_next" value="https://nexus-learn.netlify.app/thank-you.html">
+                        <input type="hidden" name="_captcha" value="false">
+                        
+                        <button type="submit" class="btn btn-primary">Complete Registration</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Event Details</h3>
+                    
+                    <h4>About the Conference</h4>
+                    <p>The Digital Skills Conference 2025 is a one-day intensive program designed to equip participants with essential digital competencies for the modern workplace.</p>
+                    
+                    <h4>What You'll Learn</h4>
+                    <ul>
+                        <li>Digital marketing fundamentals</li>
+                        <li>Basic coding principles</li>
+                        <li>Data analysis techniques</li>
+                        <li>Professional online presence</li>
+                    </ul>
+                    
+                    <h4>Bank Transfer Details</h4>
+                    <p><strong>Bank Name:</strong> Zenith Bank<br>
+                    <strong>Account Name:</strong> ILM-NEXUS<br>
+                    <strong>Account Number:</strong> 1234567890</p>
+                    
+                    <div class="social-links">
+                        <p>Share this event:</p>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="news.html">News</a>
+                <a href="events.html">Events</a>
+                <a href="team.html">Team</a>
+                <a href="join.html">Join Us</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="logo">ILM-<span>NEXUS</span></div>
+            <p class="copyright">© 2025 ILM-NEXUS. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

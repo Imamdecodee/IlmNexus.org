@@ -2,6 +2,8 @@ backend:
   name: git-gateway
   branch: main
 
+# Enable Identity
+local_backend: false  # Set to true only for local development
 media_folder: "assets/img/uploads"  # Where images are stored
 public_folder: "/assets/img/uploads"
 

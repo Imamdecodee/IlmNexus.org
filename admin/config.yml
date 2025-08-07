@@ -1,20 +1,29 @@
 backend:
   name: git-gateway
   branch: main
+  commit_messages:
+    create: "Create {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "[skip ci] Upload “{{path}}”"
+    deleteMedia: "[skip ci] Delete “{{path}}”"
 
-# Enable Identity
-local_backend: false  # Set to true only for local development
-media_folder: "assets/img/uploads"  # Where images are stored
-public_folder: "/assets/img/uploads"
+media_folder: "static/img/uploads"
+public_folder: "/img/uploads"
 
 collections:
   - name: "news"
-    label: "News Posts"
+    label: "News"
     folder: "_posts/news"
     create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { name: "title", label: "Title", widget: "string" }
-      - { name: "date", label: "Date", widget: "datetime" }
-      - { name: "image", label: "Featured Image", widget: "image" }
-      - { name: "excerpt", label: "Short Description", widget: "text" }
-      - { name: "body", label: "Content", widget: "markdown" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Event Category", name: "category", widget: "select", 
+          options: ["Conference", "Workshop", "Announcement", "Partnership"] }
+      - { label: "SEO Title", name: "seo_title", widget: "string", required: false }
+      - { label: "Meta Description", name: "meta_description", widget: "text", required: false }

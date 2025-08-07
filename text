@@ -1,0 +1,22 @@
+ilm-nexus/
+├── index.html       (Homepage)
+├── news.html       (News & Updates)
+├── events.html     (Events)
+├── team.html       (Our Team)
+├── join.html       (Join Us)
+├── contact.html    (Contact)
+├── assets/
+│   ├── css/
+│   │   └── style.css (Shared CSS)
+│   └── js/
+│       └── script.js (Shared JavaScript)
+ilm-nexus/
+├── admin/               (Netlify CMS)
+│   ├── index.html       (CMS login)
+│   └── config.yml       (CMS settings)
+├── _posts/             (News posts in Markdown)
+│   └── news/
+│       ├── 2025-07-15-fss-collab.md
+│       └── 2025-08-22-digital-skills.md
+├── news.html           (News page - now dynamic)
+└── assets/js/news.js   (News loader)

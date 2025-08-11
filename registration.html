@@ -3,84 +3,514 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Registration | ILM-NEXUS</title>
+    <title>Digital Skills Conference 2025 - Register Now</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        /* Event Registration Specific Styles */
+        :root {
+            --primary-blue: #1a3a8f;
+            --secondary-blue: #2a56c6;
+            --light-blue: #e6f0ff;
+            --gold: #ffd700;
+            --dark-gold: #d4af37;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333333;
+            --medium-gray: #777777;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--light-gray);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Section */
         .event-header {
             text-align: center;
-            margin-bottom: 30px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+            border-radius: 10px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .event-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23ffd700" fill-opacity="0.05" d="M50 0 L100 50 L50 100 L0 50 Z"/></svg>');
+            background-size: 80px 80px;
+            opacity: 0.3;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--gold);
         }
         
         .event-header img {
             max-width: 100%;
+            height: auto;
             border-radius: 8px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            border: 5px solid var(--white);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
         .event-details {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-        
-        .detail-item {
             display: flex;
-            margin-bottom: 15px;
-        }
-        
-        .detail-item i {
-            color: #2A3F8F;
-            margin-right: 15px;
-            font-size: 20px;
-            min-width: 25px;
-        }
-        
-        .payment-options {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
             margin-top: 30px;
         }
         
-        .payment-method {
+        .detail-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px 25px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
+            min-width: 250px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .detail-item:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .detail-item i {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-right: 15px;
+        }
+        
+        .detail-item h4 {
+            font-size: 1rem;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+        
+        .detail-item p {
+            font-size: 0.9rem;
+            color: var(--white);
+        }
+        
+        /* Main Content */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid var(--gold);
+        }
+        
+        .contact-form h3 {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+        
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--secondary-blue);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(42, 86, 198, 0.2);
+        }
+        
+        .payment-options {
+            margin: 25px 0;
+            padding: 20px;
+            background-color: var(--light-blue);
+            border-radius: 8px;
+        }
+        
+        .payment-options h4 {
             margin-bottom: 15px;
+            color: var(--primary-blue);
+        }
+        
+        .payment-method {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
         }
         
         .payment-method input {
             margin-right: 10px;
         }
+        
+        .payment-method label {
+            font-weight: 500;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background-color: var(--gold);
+            color: var(--primary-blue);
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 0 var(--dark-gold);
+        }
+        
+        .btn:hover {
+            background-color: var(--dark-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 var(--dark-gold);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 3px 0 var(--dark-gold);
+        }
+        
+        /* Contact Info Section */
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .contact-info h4 {
+            font-size: 1.3rem;
+            color: var(--secondary-blue);
+            margin: 25px 0 15px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .contact-info h4::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--gold);
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+            color: var(--medium-gray);
+        }
+        
+        .contact-info ul {
+            list-style-type: none;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info ul li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: var(--medium-gray);
+        }
+        
+        .contact-info ul li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+        
+        .social-links {
+            margin-top: 30px;
+        }
+        
+        .social-links p {
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--gold);
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonials h3 {
+            text-align: center;
+            color: var(--primary-blue);
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--light-blue);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--gold);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 15px;
+            color: var(--dark-gray);
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--secondary-blue);
+        }
+        
+        /* Countdown Timer */
+        .countdown {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            color: var(--primary-blue);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .countdown-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .countdown-item {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 10px 15px;
+            border-radius: 5px;
+            min-width: 70px;
+        }
+        
+        .countdown-number {
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+        
+        .countdown-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Value Proposition */
+        .value-props {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .value-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            border-top: 3px solid var(--gold);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .value-title {
+            font-size: 1.2rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+        
+        .value-desc {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .detail-item {
+                min-width: 100%;
+            }
+            
+            .contact-form, .contact-info {
+                min-width: 100%;
+            }
+            
+            .countdown-timer {
+                flex-wrap: wrap;
+            }
+        }
+        
+        /* Form Enhancements */
+        .form-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .form-header p {
+            color: var(--medium-gray);
+            margin-top: 10px;
+        }
+        
+        .required-field::after {
+            content: " *";
+            color: #e74c3c;
+        }
+        
+        /* Early Bird Banner */
+        .early-bird {
+            background-color: var(--gold);
+            color: var(--primary-blue);
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <div class="logo">ILM-<span>NEXUS</span></div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="team.html">Team</a></li>
-                    <li><a href="join.html">Join Us</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </header>
-
     <!-- Event Registration Section -->
     <section class="contact">
         <div class="container">
             <div class="event-header">
                 <h2 class="section-title">Digital Skills Conference 2025</h2>
+                <p class="event-subtitle">Master the Digital Landscape: Future-Proof Your Career</p>
                 <img src="./ilm nexus event gallary/ilm-nexus backdrop.jpg" alt="Digital Skills Conference">
                 
                 <div class="event-details">
@@ -95,7 +525,7 @@
                         <i class="fas fa-clock"></i>
                         <div>
                             <h4>Time</h4>
-                            <p>9:00 AM - 5:00 PM</p>
+                            <p>10:00 AM - 2:00 PM</p>
                         </div>
                     </div>
                     <div class="detail-item">
@@ -109,44 +539,95 @@
                         <i class="fas fa-tag"></i>
                         <div>
                             <h4>Registration Fee</h4>
-                            <p>₦5,000 (Students) | ₦10,000 (Professionals)</p>
+                            <p>Students(Free) | you can sponsor our event</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="countdown">
+                    <div class="countdown-title">REGISTRATION CLOSES IN:</div>
+                    <div class="countdown-timer">
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="days">00</div>
+                            <div class="countdown-label">Days</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="hours">00</div>
+                            <div class="countdown-label">Hours</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="minutes">00</div>
+                            <div class="countdown-label">Minutes</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="seconds">00</div>
+                            <div class="countdown-label">Seconds</div>
                         </div>
                     </div>
                 </div>
             </div>
             
+            <!-- Value Propositions -->
+            <div class="value-props">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3 class="value-title">Expert-Led Workshops</h3>
+                    <p class="value-desc">Learn from industry leaders with years of practical experience in digital transformation.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3 class="value-title">Networking Opportunities</h3>
+                    <p class="value-desc">Connect with professionals and peers to expand your career network.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-certificate"></i></div>
+                    <h3 class="value-title">Certificate of Participation</h3>
+                    <p class="value-desc">Earn a certificate to validate your new skills and enhance your resume.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-briefcase"></i></div>
+                    <h3 class="value-title">Career Advancement</h3>
+                    <p class="value-desc">Gain competitive skills that employers are actively seeking in today's job market.</p>
+                </div>
+            </div>
+            
             <div class="contact-container">
                 <div class="contact-form">
+                    <div class="form-header">
+                        <h3>Secure Your Spot Today</h3>
+                        <p> Limited spots — join now for free digital skills training! </p>
+                        <div class="early-bird">
+                            <i class="fas fa-star"></i>Register early for free mentorship & bootcamp access!<i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
                     <form action="https://formsubmit.co/theilmnexus@gmail.com" method="POST">
-                        <h3>Registration Form</h3>
-                        
                         <div class="form-group">
-                            <label for="full-name">Full Name*</label>
-                            <input type="text" id="full-name" name="full-name" required>
+                            <label for="full-name" class="required-field">Full Name</label>
+                            <input type="text" id="full-name" name="full-name" required placeholder="Enter your full name">
                         </div>
                         
                         <div class="form-group">
-                            <label for="email">Email Address*</label>
-                            <input type="email" id="email" name="email" required>
+                            <label for="email" class="required-field">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
                         </div>
                         
                         <div class="form-group">
-                            <label for="phone">Phone Number*</label>
-                            <input type="tel" id="phone" name="phone" required>
+                            <label for="phone" class="required-field">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="08012345678">
                         </div>
                         
                         <div class="form-group">
-                            <label for="institution">Institution/Organization*</label>
-                            <input type="text" id="institution" name="institution" required>
+                            <label for="institution" class="required-field">Institution/Organization</label>
+                            <input type="text" id="institution" name="institution" required placeholder="Where do you work/study?">
                         </div>
                         
                         <div class="form-group">
-                            <label for="attendee-type">Attendee Type*</label>
+                            <label for="attendee-type" class="required-field">Attendee Type</label>
                             <select id="attendee-type" name="attendee-type" required>
-                                <option value="">Select...</option>
-                                <option value="student">Student</option>
-                                <option value="professional">Professional</option>
-                                <option value="educator">Educator</option>
+                                <option value="">Select your category...</option>
+                                <option value="student">Student (FREE)</option>
+                                <option value="professional">sponsors (₦100,000)</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>
@@ -154,7 +635,7 @@
                         <div class="form-group">
                             <label for="dietary">Dietary Requirements</label>
                             <select id="dietary" name="dietary">
-                                <option value="none">None</option>
+                                <option value="none">No special requirements</option>
                                 <option value="vegetarian">Vegetarian</option>
                                 <option value="vegan">Vegan</option>
                                 <option value="halal">Halal</option>
@@ -164,7 +645,7 @@
                         
                         <div class="form-group">
                             <label for="special-needs">Special Needs/Access Requirements</label>
-                            <textarea id="special-needs" name="special-needs" rows="3"></textarea>
+                            <textarea id="special-needs" name="special-needs" rows="3" placeholder="Let us know how we can accommodate you"></textarea>
                         </div>
                         
                         <div class="payment-options">
@@ -175,14 +656,10 @@
                                 <label for="bank-transfer">Bank Transfer</label>
                             </div>
                             
-                            <div class="payment-method">
-                                <input type="radio" id="paystack" name="payment-method" value="paystack">
-                                <label for="paystack">Paystack (Online Payment)</label>
-                            </div>
-                            
+                          
                             <div class="payment-method">
                                 <input type="radio" id="onsite" name="payment-method" value="onsite">
-                                <label for="onsite">Pay Onsite</label>
+                                <label for="onsite">Pay Onsite (Limited Availability)</label>
                             </div>
                         </div>
                         
@@ -192,8 +669,8 @@
                         </div>
                         
                         <div class="form-group">
-                            <input type="checkbox" id="newsletter" name="newsletter">
-                            <label for="newsletter">Subscribe to our newsletter</label>
+                            <input type="checkbox" id="newsletter" name="newsletter" checked>
+                            <label for="newsletter">Yes! I want to receive updates about future events and resources</label>
                         </div>
                         
                         <!-- FormSubmit settings -->
@@ -201,32 +678,56 @@
                         <input type="hidden" name="_next" value="https://nexus-learn.netlify.app/thank-you.html">
                         <input type="hidden" name="_captcha" value="false">
                         
-                        <button type="submit" class="btn btn-primary">Complete Registration</button>
+                        <button type="submit" class="btn">
+                            <i class="fas fa-lock"></i> SECURE REGISTRATION NOW
+                        </button>
+                        
+                        <p style="text-align: center; margin-top: 15px; font-size: 0.8rem; color: var(--medium-gray);">
+                            <i class="fas fa-shield-alt"></i> Your information is secure and will not be shared
+                        </p>
                     </form>
                 </div>
                 
                 <div class="contact-info">
-                    <h3>Event Details</h3>
+                    <h3>Why Attend This Conference?</h3>
                     
-                    <h4>About the Conference</h4>
-                    <p>The Digital Skills Conference 2025 is a one-day intensive program designed to equip participants with essential digital competencies for the modern workplace.</p>
+                    <h4>Transform Your Career</h4>
+                    <p>In today's rapidly evolving digital landscape, staying competitive means continuously upgrading your skills. Our conference is designed to provide you with practical, immediately applicable knowledge that will set you apart in the job market.</p>
                     
-                    <h4>What You'll Learn</h4>
+                    <h4>Comprehensive Learning Tracks</h4>
                     <ul>
-                        <li>Digital marketing fundamentals</li>
-                        <li>Basic coding principles</li>
-                        <li>Data analysis techniques</li>
-                        <li>Professional online presence</li>
+                        <li><strong>Digital Marketing Mastery:</strong> Learn SEO, social media strategies, and content creation</li>
+                        <li><strong>Coding Fundamentals:</strong> Hands-on introduction to HTML, CSS, and JavaScript</li>
+                        <li><strong>Data Analysis:</strong> Excel power techniques and introduction to Python for data</li>
+                        <li><strong>Professional Branding:</strong> Build an impressive LinkedIn profile and online portfolio</li>
+                        <li><strong>AI Tools:</strong> Practical applications of AI in everyday work</li>
                     </ul>
                     
-                    <h4>Bank Transfer Details</h4>
-                    <p><strong>Bank Name:</strong> Zenith Bank<br>
-                    <strong>Account Name:</strong> ILM-NEXUS<br>
-                    <strong>Account Number:</strong> 1234567890</p>
+                    <div class="testimonials">
+                        <h3>What Past Attendees Say</h3>
+                        <div class="testimonial-grid">
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">"This conference completely transformed my approach to digital marketing. I implemented what I learned and doubled my client base in 3 months!"</p>
+                                <p class="testimonial-author">- Adeola Johnson, Marketing Consultant</p>
+                            </div>
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">"The coding workshop gave me the confidence to start building my own website. I never thought I could do it before attending."</p>
+                                <p class="testimonial-author">- Chinedu Okeke, Student</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4>Payment Information</h4>
+                    <p><strong>Bank Transfer:</strong><br>
+                    <strong>Bank Name:</strong> guranty trust Bank(GT-Bank)<br>
+                    <strong>Account Name:</strong> MIqdad Bada <br>
+                    <strong>Account Number:</strong>0897852639</p>
+                    
+                    <p>After payment, please send proof of payment to <strong>theilmnexus@gmail.com</strong> with your full name as reference.</p>
                     
                     <div class="social-links">
-                        <p>Share this event:</p>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <p>Know someone who would benefit from this? Share now:</p>
+                        <a href="https://chat.whatsapp.com/GVI2Zr3H5Bh8cNE7RcBQ1P"><i class="fab fa-whatsapp"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fas fa-envelope"></i></a>
@@ -235,24 +736,42 @@
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="news.html">News</a>
-                <a href="events.html">Events</a>
-                <a href="team.html">Team</a>
-                <a href="join.html">Join Us</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="logo">ILM-<span>NEXUS</span></div>
-            <p class="copyright">© 2025 ILM-NEXUS. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <script src="assets/js/script.js"></script>
+    
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const eventDate = new Date("August 22, 2025 00:00:00").getTime();
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById("days").innerHTML = days.toString().padStart(2, "0");
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, "0");
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, "0");
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, "0");
+            
+            if (distance < 0) {
+                clearInterval(countdownTimer);
+                document.getElementById("days").innerHTML = "00";
+                document.getElementById("hours").innerHTML = "00";
+                document.getElementById("minutes").innerHTML = "00";
+                document.getElementById("seconds").innerHTML = "00";
+            }
+        }
+        
+        const countdownTimer = setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Form Enhancement: Show payment details based on selection
+        document.querySelectorAll('input[name="payment-method"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                // You can add additional logic here if needed
+            });
+        });
+    </script>
 </body>
 </html>
